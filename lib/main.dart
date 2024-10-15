@@ -56,6 +56,19 @@ class MyStatelessHomePage extends StatelessWidget {
               ),
             ),
             // Use GetX with observable builder for observable variable
+            // Or you could use Obx for observable variables
+            // Obx does not declare a controller, because you need a existing one (external and not scoped)
+            // In cases you need to use in multiple places
+            Obx(() {
+              return _valueController.isLoading
+                  ? const CircularProgressIndicator()
+                  : ElevatedButton(
+                onPressed: () {
+                  _valueController.setDefinedValue(_textController.text);
+                },
+                child: const Text('Confirm'),
+              );
+            }),
             GetX<ValueController>(
               init: _valueController,
               builder: (controller) {
