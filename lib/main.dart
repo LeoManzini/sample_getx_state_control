@@ -49,10 +49,14 @@ class MyStatelessHomePage extends StatelessWidget {
                 );
               },
             ),
-            TextField(
-              controller: _textController,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 32),
+              child: TextField(
+                controller: _textController,
+              ),
             ),
-            GetBuilder<ValueController>(
+            // Use GetX with observable builder for observable variable
+            GetX<ValueController>(
               init: _valueController,
               builder: (controller) {
                 return controller.isLoading
