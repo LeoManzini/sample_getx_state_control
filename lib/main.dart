@@ -16,19 +16,19 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+      home: const MyStatefulHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class MyStatefulHomePage extends StatefulWidget {
+  const MyStatefulHomePage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyStatefulHomePage> createState() => _MyStatefulHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyStatefulHomePageState extends State<MyStatefulHomePage> {
   String _definedValue = '';
   final TextEditingController _textController = TextEditingController();
 
