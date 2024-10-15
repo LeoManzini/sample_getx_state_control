@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample_getx_state_control/br/com/leomanzini/screens/stateless_change_value_getx_samples.dart';
+import 'package:sample_getx_state_control/br/com/leomanzini/screens/getx_form_samples.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: MyStatelessHomePage(),
+      home: GetxFormSamples(),
     );
   }
 }
