@@ -7,6 +7,8 @@ import 'package:sample_getx_state_control/br/com/leomanzini/widgets/text_field_b
 class GetxSeparatedFormSamples extends StatelessWidget {
   GetxSeparatedFormSamples({super.key});
 
+  // How to search on the controller you injected earlier
+  // final UserController _userController = Get.find<UserController>();
   // When explicitly declared controller type does not need to use the Get.find<Type>()
   final UserController _userController = Get.find();
   final TextEditingController _nameController = TextEditingController();

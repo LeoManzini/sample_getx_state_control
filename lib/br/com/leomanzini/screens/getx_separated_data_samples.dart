@@ -21,7 +21,13 @@ class GetxSeparatedDataSamples extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Obx(() => buildTextData('Name: ${_userController.user.name}')),
-            Obx(() => buildTextData('Age: ${_userController.user.age}')),
+            // When using getx, you can not use init state here if you already have a controller
+            // of same kind as needed injected earlier
+            GetX<UserController>(
+              builder: (controller) {
+                return buildTextData('Age: ${_userController.user.age}');
+              },
+            ),
           ],
         ),
       ),
