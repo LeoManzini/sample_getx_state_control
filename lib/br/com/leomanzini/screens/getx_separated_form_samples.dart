@@ -33,7 +33,13 @@ class GetxSeparatedFormSamples extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => GetxSeparatedDataSamples()));
+                // Getx go to another screen, nut need to change main screen widget
+                // from MaterialApp to GetMaterialApp, uses with anonymous function (to a better performance)
+                Get.to(() => GetxSeparatedDataSamples());
+                // Syntax to navigate back with GetX Get.back();
+                // To pass value to another screen from the one is being closed use Get.back(result: 'value');
+                // To receive this value from a Get.back use final result = await Get.to(() => GetxSeparatedDataSamples());
+                // Get.toNamed('/data'); to use named routes with GetX
               },
               child: const Text('Data screen'),
             ),
